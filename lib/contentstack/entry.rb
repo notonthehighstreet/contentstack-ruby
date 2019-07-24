@@ -18,7 +18,7 @@ module Contentstack
 
     private
     def setup(attrs, content_type_uid=nil)
-      @fields       = attrs.symbolize_keys
+      @fields       = attrs.content_stack_symbolize_keys
       @content_type = content_type_uid if !content_type_uid.blank?
       @owner        = attrs[:_owner] if attrs[:_owner]
       @uid          = attrs[:uid]

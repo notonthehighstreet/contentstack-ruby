@@ -16,7 +16,7 @@ module Contentstack
             updated_at: self.updated_at,
             schema: @attributes[:schema]
           }
-        end 
+        end
       else
         define_method method_name do
           return @attributes[method_name]
@@ -25,7 +25,7 @@ module Contentstack
     end
 
     def initialize(object)
-      @attributes = object.symbolize_keys
+      @attributes = object.content_stack_symbolize_keys
     end
 
     def query
