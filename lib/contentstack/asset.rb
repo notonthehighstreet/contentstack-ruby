@@ -42,7 +42,7 @@ module Contentstack
       if attrs.class == String
         @uid = attrs
       else
-        attrs = attrs.symbolize_keys
+        attrs = attrs.contentstack_symbolize_keys
         @uid = attrs[:uid]
         @content_type = attrs[:content_type]
         @filename = attrs[:filename]

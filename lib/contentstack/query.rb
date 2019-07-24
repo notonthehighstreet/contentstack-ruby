@@ -125,7 +125,7 @@ module Contentstack
     # Example:
     #    @query1 = @stack.content_type('category').query
     #    @query1.where('title', 'Electronics')
-    # 
+    #
     #    @query2 = @stack.content_type('category').query
     #    @query2.regex('description', '.*Electronics.*')
     #
@@ -148,7 +148,7 @@ module Contentstack
     # Example:
     #    @query1 = @stack.content_type('category').query
     #    @query1.where('title', 'Electronics')
-    # 
+    #
     #    @query2 = @stack.content_type('category').query
     #    @query2.where('title', 'Apparel')
     #
@@ -166,9 +166,9 @@ module Contentstack
     # Add a constraint to the query that requires a particular key entry to be less than the provided value.
     #
     # @param [String] field_uid  UID of the field for which query should be executed
-    # 
+    #
     # @param [String/Number] value  Value that provides an upper bound
-    # 
+    #
     # Example
     #    @query = @stack.content_type('product').query
     #    @query.less_than('price', '100')
@@ -182,9 +182,9 @@ module Contentstack
     # Add a constraint to the query that requires a particular key entry to be less than or equal to the provided value.
     #
     # @param [String] field_uid  UID of the field for which query should be executed
-    # 
+    #
     # @param [String/Number] value  Value that provides an upper bound
-    # 
+    #
     # Example
     #    @query = @stack.content_type('product').query
     #    @query.less_than_or_equal('price', '100')
@@ -198,9 +198,9 @@ module Contentstack
     # Add a constraint to the query that requires a particular key entry to be greater than the provided value.
     #
     # @param [String] field_uid  UID of the field for which query should be executed
-    # 
+    #
     # @param [String/Number] value  Value that provides a lower bound
-    # 
+    #
     # Example
     #    @query = @stack.content_type('product').query
     #    @query.greater_than('price', '100')
@@ -214,9 +214,9 @@ module Contentstack
     # Add a constraint to the query that requires a particular key entry to be greater than or equal to the provided value.
     #
     # @param [String] field_uid UID of the field for which query should be executed
-    # 
+    #
     # @param [String/Number] value Value that provides a lower bound
-    # 
+    #
     # Example
     #    @query = @stack.content_type('product').query
     #    @query.greater_than_or_equal('price', '100')
@@ -338,7 +338,7 @@ module Contentstack
       self
     end
 
-    # Sort the results in ascending order with the given key. 
+    # Sort the results in ascending order with the given key.
     # Sort the returned entries in ascending order of the provided key.
     #
     # @param [String] field_uid The key to order by
@@ -354,7 +354,7 @@ module Contentstack
       self
     end
 
-    # Sort the results in descending order with the given key. 
+    # Sort the results in descending order with the given key.
     # Sort the returned entries in descending order of the provided key.
     #
     # @param [String] field_uid The key to order by
@@ -370,7 +370,7 @@ module Contentstack
       self
     end
 
-    # Get entries from the specified locale. 
+    # Get entries from the specified locale.
     #
     # @param [String] code The locale code of the entry
     #
@@ -592,7 +592,7 @@ module Contentstack
         queries.map do |query_object|
           if query_object.class == Contentstack::Query && query_object.content_type == @content_type
             q = ActiveSupport::JSON.decode(query_object.query[:query])
-            this_queries.push(q.symbolize_keys)
+            this_queries.push(q.contentstack_symbolize_keys)
           end
         end
       end
