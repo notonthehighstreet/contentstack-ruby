@@ -7,8 +7,8 @@ module Contentstack
     def initialize(json, content_type_uid=nil)
       @count        = json["count"] if json["count"]
       @entries      = json["entries"].collect{|entry| Entry.new(entry, content_type_uid) }
-      @schema       = json["schema"].content_stack_symbolize_keys if json["schema"]
-      @content_type = json["content_type"].content_stack_symbolize_keys if json["content_type"]
+      @schema       = json["schema"].contentstack_symbolize_keys if json["schema"]
+      @content_type = json["content_type"].contentstack_symbolize_keys if json["content_type"]
       self
     end
 

@@ -592,7 +592,7 @@ module Contentstack
         queries.map do |query_object|
           if query_object.class == Contentstack::Query && query_object.content_type == @content_type
             q = ActiveSupport::JSON.decode(query_object.query[:query])
-            this_queries.push(q.content_stack_symbolize_keys)
+            this_queries.push(q.contentstack_symbolize_keys)
           end
         end
       end

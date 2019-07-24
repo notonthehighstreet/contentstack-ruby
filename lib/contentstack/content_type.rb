@@ -25,7 +25,7 @@ module Contentstack
     end
 
     def initialize(object)
-      @attributes = object.content_stack_symbolize_keys
+      @attributes = object.contentstack_symbolize_keys
     end
 
     def query

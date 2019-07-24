@@ -45,7 +45,7 @@ module Contentstack
       q.merge!(@headers)
       q.merge!({timestamp: Time.now.to_i})
 
-      query = "?" + q.content_stack_to_query
+      query = "?" + q.contentstack_to_query
       # puts "Request URL:- #{@host}#{@api_version}#{path}#{query} \n\n"
 
       ActiveSupport::JSON.decode(open("#{@host}#{@api_version}#{path}#{query}").read)
