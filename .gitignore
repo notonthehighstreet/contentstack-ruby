@@ -1,7 +1,8 @@
-contentstack-*
+.yardoc
 build_doc.sh
-test
+contentstack-*
+coverage
 doc
 spec-integration
-coverage
-\.yardoc
+test
+vendor
