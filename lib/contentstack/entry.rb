@@ -1,3 +1,6 @@
+require 'active_support'
+require 'active_support/core_ext/object/blank'
+
 module Contentstack
   class Entry
     attr_reader :fields, :content_type, :uid, :owner
@@ -19,7 +22,7 @@ module Contentstack
     private
     def setup(attrs, content_type_uid=nil)
       @fields       = attrs.contentstack_symbolize_keys
-      @content_type = content_type_uid if !content_type_uid.blank?
+      @content_type = content_type_uid if content_type_uid.present?
       @owner        = attrs[:_owner] if attrs[:_owner]
       @uid          = attrs[:uid]
     end
