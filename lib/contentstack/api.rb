@@ -43,7 +43,6 @@ module Contentstack
       q ||= {}
 
       q.merge!(@headers)
-      q.merge!({timestamp: Time.now.to_i})
 
       query = "?" + q.contentstack_to_query
       # puts "Request URL:- #{@host}#{@api_version}#{path}#{query} \n\n"
