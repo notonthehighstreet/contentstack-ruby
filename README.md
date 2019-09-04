@@ -1,3 +1,4 @@
+
 # **Ruby SDK for Contentstack**
 
 [![Build Status](https://travis-ci.org/notonthehighstreet/contentstack-ruby.svg?branch=master)](https://travis-ci.org/notonthehighstreet/contentstack-ruby)
@@ -22,7 +23,17 @@ Or you can run this command in your terminal (you might need administrator privi
 
 To start using the SDK in your application, you will need to initialize the stack by providing the values for the keys given in the code snippet below.
 
+    # with default region
     client = Contentstack::Client.new("site_api_key", "access_token", "enviroment_name")
+    
+    # with specific region
+    client = Contentstack::Client.new("site_api_key", "access_token", "enviroment_name",{"region": Contentstack::Region::EU})
+    
+    # with custom host
+    client = Contentstack::Client.new("site_api_key", "access_token", "enviroment_name",{"host": "https://custom-cdn.contentstack.com"})
+
+
+
 
 ## **Key Concepts for using Contentstack**
 
@@ -92,7 +103,7 @@ SDK functions for Image Delivery API coming soon.
 
 ## **The MIT License (MIT)**
 
-Copyright © 2012-2017 [Built.io](https://www.built.io/). All Rights Reserved
+Copyright © 2012-2019 [Contentstack](https://www.contentstack.com). All Rights Reserved
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
