@@ -48,11 +48,9 @@ module Contentstack
       query = "?" + q.contentstack_to_query
       # puts "Request URL:- #{@host}#{@api_version}#{path}#{query} \n\n"
 
-      response = open(
+      response = URI.open(
         "#{@host}#{@api_version}#{path}#{query}",
-        {
           :open_timeout => @open_timeout
-        }
       )
 
       ActiveSupport::JSON.decode(response.read)
