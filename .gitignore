@@ -6,3 +6,6 @@ doc
 spec-integration
 test
 vendor
+/.bundle
+/tags
+/.idea
